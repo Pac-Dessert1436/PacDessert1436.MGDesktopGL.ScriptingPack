@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Pac-Dessert1436",
+  "classifications": [
+    "MonoGame",
+    "Game",
+    "Scripting",
+    "VBScript"
+  ],
+  "name": "MonoGame 2D VBScript Template (VB.NET Host)",
+  "shortName": "mg2dvbscript",
+  "identity": "PacDessert1436.MGDesktopGL.VBScript2D",
+  "description": "MonoGame DesktopGL template with VBScript scripting support using ClearScript",
+  "tags": {
+    "language": "VB",
+    "type": "project"
+  },
+  "sourceName": "MonoGameVBScript",
+  "preferNameDirectory": true
+}

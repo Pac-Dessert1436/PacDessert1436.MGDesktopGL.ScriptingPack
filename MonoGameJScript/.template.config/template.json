@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Pac-Dessert1436",
+  "classifications": [
+    "MonoGame",
+    "Game",
+    "Scripting",
+    "JScript"
+  ],
+  "name": "MonoGame 2D JScript Template (C# Host)",
+  "shortName": "mg2djscript",
+  "identity": "PacDessert1436.MGDesktopGL.JScript2D",
+  "description": "MonoGame DesktopGL template with JScript scripting support using ClearScript",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "MonoGameJScript",
+  "preferNameDirectory": true
+}
