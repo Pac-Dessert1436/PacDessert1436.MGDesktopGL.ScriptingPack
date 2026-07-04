@@ -1,5 +1,9 @@
 # MonoGame DesktopGL Scripting Pack
 
+> **📢 DEVELOPMENT UPDATE**: While this project is now available as a stable v1.0.0 release on NuGet, please note it's a personal side project. I'm currently prioritizing preparation for my Postgraduate Entrance Exam, so **active development will be paused until December 21, 2026**. 
+> 
+> Thank you for your understanding and support - I look forward to continuing work on this project once my exams are complete! 🎓
+
 A feature-rich set of MonoGame DesktopGL 2D game templates, featuring **JScript scripting support with C# game host** and **VBScript scripting support with VB.NET game host** via Microsoft ClearScript, with a complete Snake game implementation as a getting-started demo.
 
 All assets included in this package come with clear licensing terms and attribution requirements. See [Asset Credits](#asset-credits) for complete details on usage rights and restrictions.
