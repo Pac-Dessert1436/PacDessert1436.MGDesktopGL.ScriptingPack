@@ -1,31 +1,35 @@
 # MonoGame DesktopGL Scripting Pack
 
-> **📢 DEVELOPMENT UPDATE**: While this project is now available as a stable v1.0.0 release on NuGet, please note it's a personal side project. I'm currently prioritizing preparation for my Postgraduate Entrance Exam, so **active development will be paused until December 21, 2026**. 
-> 
-> Thank you for your understanding and support - I look forward to continuing work on this project once my exams are complete! 🎓
+> **📢 DEVELOPMENT UPDATE**: The current version (1.1.0) adds C++/CLI support. This is a personal side project, and I am currently preparing for my postgraduate entrance exam, so **active development will be paused until December 21, 2026**.
+>
+> Thank you for your understanding and support. I look forward to continuing work on this project once my exams are complete! 🎓
 
-A feature-rich set of MonoGame DesktopGL 2D game templates, featuring **JScript scripting support with C# game host** and **VBScript scripting support with VB.NET game host** via Microsoft ClearScript, with a complete Snake game implementation as a getting-started demo.
+This package provides a set of MonoGame DesktopGL 2D game templates with **JScript scripting support via a C# host**, **VBScript scripting support via a VB.NET host**, and a new **C++/CLI template** for developers who want a C++-style workflow inside the .NET ecosystem. Each template includes a complete Snake game demo to help you get started quickly.
 
 All assets included in this package come with clear licensing terms and attribution requirements. See [Asset Credits](#asset-credits) for complete details on usage rights and restrictions.
 
+_**Note**: This template package is intended for Windows systems; Linux and macOS are not currently supported. The project is licensed under the MIT License, and the NuGet package metadata has been corrected accordingly._
+
 ## VBScript Support: Preserving a Legacy
 
-As the creator of **vbs-revive** (https://github.com/Pac-Dessert1436/vbs-revive/) - a modern VBScript game engine built with VB.NET WinForms - I'm deeply committed to preserving the ecosystem of both VBScript and VB.NET. While Microsoft has announced plans to deprecate VBScript by 2027, this scripting pack tailored for MonoGame maintains full VBScript support as a tribute to the language's legacy and its dedicated community.
+As the creator of **vbs-revive** (https://github.com/Pac-Dessert1436/vbs-revive/), a modern VBScript game engine built with VB.NET WinForms, I am deeply committed to preserving the ecosystems of both VBScript and VB.NET. Although Microsoft has announced plans to deprecate VBScript by 2027, this MonoGame scripting pack continues to offer full VBScript support as a tribute to the language’s legacy and its dedicated community.
 
-For developers seeking to continue using VBScript for game development, **vbs-revive** offers a forward-looking solution that preserves the familiar VBScript syntax while leveraging contemporary .NET capabilities. _For those preferring a future-proof alternative, the JScript template provides a robust, supported scripting environment with similar flexibility and ease of use._
+For developers who want to keep using VBScript in game development, **vbs-revive** offers a forward-looking solution that preserves the familiar syntax while leveraging modern .NET capabilities. _For those who prefer a more future-proof option, the JScript and C++/CLI templates provide robust, well-supported scripting environments with similar flexibility._
 
 ## Features
 
-- **JScript Template**: Full MonoGame DesktopGL project (C# host) with JScript scripting support
-- **VBScript Template**: Full MonoGame DesktopGL project (VB.NET host) with VBScript scripting support
+- **JScript Template**: Full MonoGame DesktopGL project with a C# host and JScript scripting support
+- **VBScript Template**: Full MonoGame DesktopGL project with a VB.NET host and VBScript scripting support
+- **C++/CLI Template**: Full MonoGame DesktopGL project with a C# host and a C++/CLI core for a C++-style development experience
 - **ClearScript Integration**: Seamless .NET and JScript/VBScript interoperability
-- **Ready to Use**: Pre-configured with content pipeline and basic game structure
+- **Ready to Use**: Pre-configured with a content pipeline and a basic game structure
 
 ## Requirements
 
 - [.NET SDK 10.0](https://dotnet.microsoft.com/download/dotnet/10.0) or later
 - MonoGame 3.8 or later
 - ClearScript (automatically included via NuGet)
+- For the C++/CLI template, a Windows environment with Visual C++/CLI build support is recommended
 
 ## Installation
 
@@ -37,7 +41,7 @@ dotnet new install PacDessert1436.MGDesktopGL.ScriptingPack
 ### Manual Installation
 1. Clone or download this repository:
 ```bash
-git clone https://github.com/Pac-Dessert1436/MonoGameDesktopGLScriptingPack.git
+git clone https://github.com/Pac-Dessert1436/PacDessert1436.MGDesktopGL.ScriptingPack.git
 ```
 2. Create the NuGet package:
 ```bash
@@ -64,6 +68,13 @@ cd MyVBScriptGame
 dotnet run
 ```
 
+### Create a C++/CLI Game
+```bash
+dotnet new mg2dcppcli -n MyCppCliGame
+cd MyCppCliGame
+dotnet run
+```
+
 ## Project Structure
 
 ### C# Host (GameHost.cs)
@@ -80,7 +91,14 @@ The VB.NET host initializes MonoGame and sets up the **VBScript** scripting envi
 - Handles game loop and input processing
 - Core script file: `GameCore.vbs`
 
-Both JScript and VBScript script files contain the game logic:
+### C++/CLI Host and Core
+The C++/CLI template uses a .NET host project together with a **C++/CLI core** project:
+- The host initializes MonoGame and launches the game
+- The C++/CLI core contains the game implementation and entry point
+- The template is designed for developers who want a C++-style workflow while still using the .NET and MonoGame ecosystem
+- Core entry point: `GameMain.cpp`
+
+Both JScript and VBScript scripts contain the game logic:
 - `Initialize()` - Called once at startup
 - `Update(gameTime)` - Called every frame for game logic
 - `Draw(gameTime)` - Called every frame for rendering
@@ -98,14 +116,14 @@ Both templates provide access to a rich set of MonoGame types and framework-spec
 | Utilities | `MathHelper`, `MediaPlayer`, `Random` (JScript), `VBMath` (VBScript) | Various |
 
 ### API Documentation
-Each template includes a **detailed API cheat sheet** (`API_CHEATSHEET.md`) with:
+Each template includes practical documentation to help you get started:
 - Comprehensive type references
 - Language-specific syntax examples
 - Step-by-step usage guides
 - Content customization instructions
 - Best practices for game development
 
-The cheat sheets are tailored to each language's unique features (e.g., `new` keyword support in JScript vs. factory methods in VBScript).
+For the C++/CLI template, the main guide is [MonoGameCppCLI/CRASH_COURSE.md](MonoGameCppCLI/CRASH_COURSE.md), providing a full beginner-friendly introduction to C++/CLI syntax and patterns. The JScript and VBScript templates continue to use `API_CHEATSHEET.md` for detailed API references.
 
 ## Language-Specific Features
 
@@ -116,10 +134,15 @@ The cheat sheets are tailored to each language's unique features (e.g., `new` ke
 - **Random Numbers**: Uses `Random.Shared.Next()` for robust random number generation
 
 ### VBScript Template
-- **Legacy Compatibility**: Maintains familiar VBScript syntax with `Sub`/`Function` declarations and `Set` keyword
+- **Legacy Compatibility**: Maintains familiar VBScript syntax with `Sub`/`Function` declarations and the `Set` keyword
 - **Case Insensitivity**: Follows VBScript conventions with case-insensitive identifiers
-- **Factory Methods**: Uses `Helpers.CreateVector2()`, `Helpers.CreatePoint()`, etc., since VBScript doesn't support `new` for .NET objects
-- **Random Numbers**: Uses `VBMath.Rnd()` and `VBMath.Randomize()` for traditional VBScript randomization
+- **Factory Methods**: Uses `Helpers.CreateVector2()`, `Helpers.CreatePoint()`, and similar helpers, since VBScript does not support `new` for .NET objects
+- **Random Numbers**: Uses `VBMath.Rnd()` and `VBMath.Randomize()` for traditional VBScript-style randomization
+
+### C++/CLI Template
+- **C++-Style Syntax**: Uses a C++/CLI code structure for developers who prefer a C++-style workflow
+- **Native Feeling**: Offers a familiar syntax for those coming from C++ while still targeting the .NET runtime
+- **MonoGame Integration**: Works with the same MonoGame API surface as the other templates
 
 ## Example Workflow
 
@@ -186,4 +209,4 @@ Both templates include a complete Snake game demo with:
 
 ## License
 
-MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

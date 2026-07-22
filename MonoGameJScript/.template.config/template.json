@@ -16,5 +16,21 @@
     "type": "project"
   },
   "sourceName": "MonoGameJScript",
-  "preferNameDirectory": true
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            "bin/**/*",
+            "obj/**/*",
+            ".vs/**/*",
+            ".vscode/**/*",
+            "Content/bin/**/*",
+            "Content/obj/**/*"
+          ]
+        }
+      ]
+    }
+  ]
 }

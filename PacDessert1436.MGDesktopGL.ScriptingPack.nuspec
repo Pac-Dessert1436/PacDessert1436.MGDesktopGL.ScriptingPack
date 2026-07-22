@@ -2,16 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>PacDessert1436.MGDesktopGL.ScriptingPack</id>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <title>MonoGame DesktopGL Scripting Pack</title>
     <authors>Pac-Dessert1436</authors>
     <owners>Pac-Dessert1436</owners>
-    <license type="expression">BSD-3-Clause</license>
+    <license type="expression">MIT</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <readme>README.md</readme>
-    <description>A feature-rich set of MonoGame DesktopGL 2D game templates, with JScript and 
-      VBScript scripting support using Microsoft ClearScript.</description>
-    <tags>monogame;game-scripting;jscript;vbscript;template;dotnet</tags>
+    <description>A feature-rich set of MonoGame DesktopGL 2D game templates, with JScript and
+      VBScript scripting support using Microsoft ClearScript, along with a new C++/CLI template.</description>
+    <tags>monogame;game-scripting;cpp-cli;jscript;vbscript;template;dotnet;windows</tags>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
@@ -19,12 +19,9 @@
       url="https://github.com/Pac-Dessert1436/PacDessert1436.MGDesktopGL.ScriptingPack" />
   </metadata>
   <files>
-    <file src="MonoGameJScript/**/*"
-      exclude="**/bin/**/*;**/obj/**/*;**/.git/**/*;**/*.user;**/*.suo;**/*.vsidx;**/*.dtbcache.v2;**/*.slnx;**/*.nupkg;**/*.nuspec;**/.vs/**/*;**/project.assets.json;**/*.AssemblyInfo.vb;**/.NETCoreApp*;**/Content/bin/**/*"
-      target="content" />
-    <file src="MonoGameVBScript/**/*"
-      exclude="**/bin/**/*;**/obj/**/*;**/.git/**/*;**/*.user;**/*.suo;**/*.vsidx;**/*.dtbcache.v2;**/*.slnx;**/*.nupkg;**/*.nuspec;**/.vs/**/*;**/project.assets.json;**/*.AssemblyInfo.vb;**/.NETCoreApp*;**/Content/bin/**/*"
-      target="content" />
+    <file src="MonoGameJScript/**/*" target="content" />
+    <file src="MonoGameVBScript/**/*" target="content" />
+    <file src="MonoGameCppCLI/**/*" target="content" />
     <file src="README.md" target="README.md" />
   </files>
 </package>

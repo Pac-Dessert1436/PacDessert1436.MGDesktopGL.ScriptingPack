@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Pac-Dessert1436",
+  "classifications": [
+    "MonoGame",
+    "Game",
+    "Scripting",
+    "C++"
+  ],
+  "name": "MonoGame 2D C++/CLI Template (C# Host)",
+  "shortName": "mg2dcppcli",
+  "identity": "PacDessert1436.MGDesktopGL.CppCLI2D",
+  "description": "MonoGame DesktopGL template with C++/CLI scripting",
+  "tags": {
+    "language": "C++",
+    "type": "project"
+  },
+  "sourceName": "MonoGameCppCLI",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            "bin/**/*",
+            "obj/**/*",
+            ".vs/**/*",
+            "x64/**/*",
+            "Content/bin/**/*",
+            "Content/obj/**/*"
+          ]
+        }
+      ]
+    }
+  ]
+}

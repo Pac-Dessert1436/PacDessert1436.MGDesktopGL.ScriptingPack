@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="MonoGameCppCLI.Core/MonoGameCppCLI.Core.vcxproj" Id="cf354cb5-c779-6ebe-9192-351a165042ba" />
+  <Project Path="MonoGameCppCLI.Host/MonoGameCppCLI.Host.csproj" />
+</Solution>
