@@ -71,10 +71,10 @@ Public Module Helpers
     <Runtime.CompilerServices.Extension>
     Public Sub FillRectangle(batch As SpriteBatch,
             x As Integer, y As Integer, width As Integer, height As Integer, color As Color)
-
-        Dim texture As New Texture2D(batch.GraphicsDevice, 1, 1)
-        texture.SetData({color})
-        batch.Draw(texture, New Rectangle(x, y, width, height), color)
+        ' Stabilize this texture's state to avoid creating multiple textures
+        Static pixel As New Texture2D(batch.GraphicsDevice, 1, 1)
+        pixel.SetData({color})
+        batch.Draw(pixel, New Rectangle(x, y, width, height), color)
     End Sub
 End Module
 

@@ -28,7 +28,7 @@ private:
 	Texture2D^ imgRedApple;
 	Texture2D^ imgSnakeBody;
 	Texture2D^ imgSnakeHead;
-	Texture2D^ _blankTexture;
+	Texture2D^ _pixel;
 
 	// Game state
 	List<Point>^ snake;
@@ -51,7 +51,7 @@ public:
 	GameMain()
 	{
 		_graphics = gcnew GraphicsDeviceManager(this);
-		Content->RootDirectory = "./Content";
+		Content->RootDirectory = "Content";
 		IsMouseVisible = true;
 	}
 
@@ -80,9 +80,9 @@ protected:
 		imgSnakeBody = Content->Load<Texture2D^>("Images/snake_body");
 		imgSnakeHead = Content->Load<Texture2D^>("Images/snake_head");
 
-		_blankTexture = gcnew Texture2D(GraphicsDevice, 1, 1);
+		_pixel = gcnew Texture2D(GraphicsDevice, 1, 1);
 		array<Color>^ data = gcnew array<Color>(1) { Color::White };
-		_blankTexture->SetData(data);
+		_pixel->SetData(data);
 	}
 
 	virtual void Update(GameTime^ gameTime) override
@@ -275,8 +275,8 @@ private:
 
 	void FillRectangle(int x, int y, int width, int height, Color color)
 	{
-		// reuse one-pixel texture with tint
-		_spriteBatch->Draw(_blankTexture, Rectangle(x, y, width, height), color);
+		// Reuse the one-pixel texture
+		_spriteBatch->Draw(_pixel, Rectangle(x, y, width, height), color);
 	}
 
 public:

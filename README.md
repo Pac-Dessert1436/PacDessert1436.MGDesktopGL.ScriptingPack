@@ -1,6 +1,6 @@
 # MonoGame DesktopGL Scripting Pack
 
-> **📢 DEVELOPMENT UPDATE**: The current version (1.1.0) adds C++/CLI support. This is a personal side project, and I am currently preparing for my postgraduate entrance exam, so **active development will be paused until December 21, 2026**.
+> **📢 DEVELOPMENT UPDATE**: The current version (1.1.1) improves C++/CLI support. This is a personal side project, and I am currently preparing for my postgraduate entrance exam, so **active development will be paused until December 21, 2026**.
 >
 > Thank you for your understanding and support. I look forward to continuing work on this project once my exams are complete! 🎓
 
@@ -9,6 +9,25 @@ This package provides a set of MonoGame DesktopGL 2D game templates with **JScri
 All assets included in this package come with clear licensing terms and attribution requirements. See [Asset Credits](#asset-credits) for complete details on usage rights and restrictions.
 
 _**Note**: This template package is intended for Windows systems; Linux and macOS are not currently supported. The project is licensed under the MIT License, and the NuGet package metadata has been corrected accordingly._
+
+## Note on C++/CLI Content Placement
+
+Starting in v1.1.0, the template added C++/CLI support and placed the Content folder inside the C++/CLI core project (`MonoGameCppCLI.Core`), with the host project referencing it. That layout works at runtime but could prevent Visual Studio's MGCB GUI from recognizing the `Content.mgcb` file. 
+
+If you are using **the C++/CLI template in v1.1.0**, and need to rebuild the content after adding new assets or modifying existing assets, please install the MGCB command-line tool and run the build from the core project folder:
+
+```bash
+# Install the MGCB command-line tool
+dotnet tool install -g dotnet-mgcb
+
+# Navigate to your C++/CLI project's core layer
+cd {YourCppCLIProject}.Core
+
+# Build the content file
+mgcb /b Content/Content.mgcb
+```
+
+In this version (1.1.1) the Content folder has been moved to the host project (`MonoGameCppCLI.Host`) so the MGCB GUI can see and edit the `Content.mgcb` file directly. _The C++/CLI game code already sets `Content->RootDirectory = "Content";` and the demo game works as expected._
 
 ## VBScript Support: Preserving a Legacy
 

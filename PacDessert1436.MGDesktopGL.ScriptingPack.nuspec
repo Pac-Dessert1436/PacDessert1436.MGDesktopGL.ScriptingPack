@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>PacDessert1436.MGDesktopGL.ScriptingPack</id>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <title>MonoGame DesktopGL Scripting Pack</title>
     <authors>Pac-Dessert1436</authors>
     <owners>Pac-Dessert1436</owners>

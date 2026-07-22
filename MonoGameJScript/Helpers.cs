@@ -46,15 +46,17 @@ public static class Helpers
         }
     }
 
+    private static Texture2D? _pixel;  // stable pixel texture's state
+
     extension(SpriteBatch batch)
     {
         public void FillRectangle(int x, int y, int width, int height, Color color)
         {
-            var texture = new Texture2D(batch.GraphicsDevice, 1, 1);
-            ArgumentNullException.ThrowIfNull(texture);
+            _pixel ??= new Texture2D(batch.GraphicsDevice, 1, 1);
+            ArgumentNullException.ThrowIfNull(_pixel);
             Rectangle rect = new(x, y, width, height);
-            texture?.SetData([color]);
-            batch?.Draw(texture, rect, color);
+            _pixel?.SetData([color]);
+            batch?.Draw(_pixel, rect, color);
         }
     }
 }
